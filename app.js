@@ -10,7 +10,10 @@ var express = require('express')
   , path = require('path');
 
 var request = require('request');
-var request = require('cheerio');
+var cheerio = require('cheerio');
+
+var postTitle;
+var postBody;
 
 var app = express();
 
@@ -25,12 +28,34 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+var refreshBlog = function(){
+
+		request('http://hoverboard.io/tehskylark/blog', function(error, response, body){
+			console.log('hey')
+		   $ = cheerio.load(body);
+		  postTitle = $('.post_snippet > h2').eq(0).text()
+		  postBody = $('.post_snippet > p').eq(0).text()
+		  console.log(postTitle)
+		   			
+		})
+	
+}
+refreshBlog();
+
+
+setInterval(function(){
+	refreshBlog();
+}, 3600000)
+
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
+app.get('/', function(req, res){
+	res.render('index', {title: postTitle, blog: postBody});
+	console.log(postTitle);
+});
 app.get('/users', user.list);
 
 app.post('/blog', function(req, res){

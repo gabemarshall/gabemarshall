@@ -39,7 +39,7 @@
 		</div>
   
 <script>
-var availableCommands = ["[[b;#000;#d3d3d3]help, list, ls] - List the available commands", "[[b;#000;#d3d3d3]about] - Learn a little about me", "[[b;#000;#d3d3d3]resume] - View my resume", "[[b;#000;#d3d3d3]projects] - View a list of my current and past projects", "[[b;#000;#d3d3d3]goto <project>] - Go to a specific project if a live demo exists (requires exiting this page)", "[[b;#000;#d3d3d3]contact] - Get my contact info", "[[b;#000;#d3d3d3]blog] - View my blog"];
+var availableCommands = ["[[b;#000;#d3d3d3]help, list, ls] - List the available commands", "[[b;#000;#d3d3d3]about] - Learn a little about me", "[[b;#000;#d3d3d3]resume] - View my resume", "[[b;#000;#d3d3d3]projects] - View a list of my current and past projects", "[[b;#000;#d3d3d3]goto <project>] - Go to a specific project if a live demo exists (requires exiting this page)", "[[b;#000;#d3d3d3]contact] - Get my contact info", "[[b;#000;#d3d3d3]blog] - View my latest blog entry"];
 
 
 var commands = {
@@ -64,6 +64,15 @@ var commands = {
 	contact: function(term){
 		term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall');
 	},
+    blog: function(term){
+        term.echo('Latest Entry, <%= title %>: \n <%= blog %> \n To view my entire blog, say view_blog')
+    },
+    blogview: function(term){
+        term.echo('Loading blog...');
+        setTimeout(function(){
+            location.href='http://hoverboard.io/tehskylark/blog'
+        }, 2000)
+    },
 	goto: function(term, projectUrl){
 		term.echo('Coming soon...');
 	}
@@ -93,6 +102,12 @@ jQuery(function($, undefined) {
         		case 'contact':
         			commands.contact(term);
         			break;
+                case 'blog':
+                    commands.blog(term);
+                    break;
+                case 'view_blog':
+                    commands.blogview(term);
+                    break;
         		default:
         			term.echo('Unknown command...type \'help\' to see a list of commands');
         	}
