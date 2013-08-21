@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link href="http://designmodo.github.io/Flat-UI/bootstrap/css/bootstrap.css" media"all" rel="stylesheet" type="text/css" />
+	<link href="stylesheets/flat-ui.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="stylesheets/main.css" media="all" rel="stylesheet" type="text/css" />
+    <link rel='stylesheet' href='/stylesheets/terminal.css' />
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    
+    <script src="javascripts/jquery.terminal-min.js"></script>
+   <!-- <script src="javascripts/dterm.js"></script>-->
+
+  </head>
+  <body style="background-color:#D3D3D3">
+    <div id="wrapper">	
+		<div id="section-intro">
+	<div id="section-profileImage" style="background-color:#444444">
+
+		<div class="container">			
+			<div class="sixteen columns">
+				<div id="box-name" class="section">
+                    	<h2>Gabe Marshall</h2>
+					<p>Security Analyst & Web Developer</p>
+				
+				</div>
+
+			</div>
+			<div class="clear"></div>
+
+		</div>
+		  
+    </div>
+	</div>
+		<div id="section-skills">
+	
+		</div>
+<div id="term_demo" class="terminal" style="height: 200px;">
+		</div>
+  
+<script>
+var availableCommands = ["[[b;#000;#d3d3d3]help, list, ls] - List the available commands", "[[b;#000;#d3d3d3]about] - Learn a little about me", "[[b;#000;#d3d3d3]resume] - View my resume", "[[b;#000;#d3d3d3]projects] - View a list of my current and past projects", "[[b;#000;#d3d3d3]goto <project>] - Go to a specific project if a live demo exists (requires exiting this page)", "[[b;#000;#d3d3d3]contact] - Get my contact info", "[[b;#000;#d3d3d3]blog] - View my blog"];
+
+
+var commands = {
+	list: function(term) {
+		for (i = 0; i < availableCommands.length; i++) {
+			term.echo(availableCommands[i]);
+		}
+	},
+	about: function(term){
+		term.clear();
+		term.echo('I\'m an outgoing IT professional passionate about all things related to the web and information security. \nIf you\'d like to see my resume just type [[b;#000;#d3d3d3]resume]');
+	},
+	resume: function(term){
+		term.echo('Loading resume...');
+        setTimeout(function(){
+            location.href='http://gabemarshall.me/resume.html'
+        }, 2000)
+	},
+	projects: function(term){
+		term.echo('Coming soon...');
+	},
+	contact: function(term){
+		term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall');
+	},
+	goto: function(term, projectUrl){
+		term.echo('Coming soon...');
+	}
+}
+jQuery(function($, undefined) {
+    $('#term_demo').terminal(function(command, term) {
+        if (command !== '') {
+        	switch (command){
+        		case 'help':
+        			commands.list(term);
+        			break;
+                case 'list':
+                    commands.list(term);
+                    break;
+        		case 'ls':
+        			commands.list(term);
+        			break;
+        		case 'about':
+        			commands.about(term);
+        			break;
+        		case 'resume':
+        			commands.resume(term);
+        			break;
+        		case 'projects':
+        			commands.projects(term);
+        			break;
+        		case 'contact':
+        			commands.contact(term);
+        			break;
+        		default:
+        			term.echo('Unknown command...type \'help\' to see a list of commands');
+        	}
+            // if(command === 'help'){
+            // 	term.echo('success');
+            // }
+            // else {
+            // 	term.echo('Unknown command...trype \'help\' to see a list of commands');
+            // }
+        } else {
+           term.echo('Unknown command...type \'help\' to see a list of commands');
+        }
+    }, {
+        greetings: 'Welcome...type [[b;#000;#d3d3d3]help] to see a list of commands.',
+        name: 'js_demo',
+        height: 200,
+        prompt: '$> '});
+});
+</script>
+  </body>
+</html>
