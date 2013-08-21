@@ -34,7 +34,8 @@ var refreshBlog = function(){
 			console.log('hey')
 		   $ = cheerio.load(body);
 		  postTitle = $('.post_snippet > h2').eq(0).text()
-		  postBody = $('.post_snippet > p').eq(0).text()
+		  postBody = $('.post_snippet > p').eq(1).text()
+
 		  console.log(postTitle)
 		   			
 		})
