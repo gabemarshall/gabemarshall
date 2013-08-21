@@ -54,7 +54,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function(req, res){
-	res.render('index', {title: postTitle, blog: postBody});
+	res.render('index', {title: postTitle});
 	console.log(postTitle);
 });
 app.get('/users', user.list);
