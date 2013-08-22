@@ -57,6 +57,11 @@ app.get('/', function(req, res){
 	res.render('index', {title: postTitle});
 	console.log(postTitle);
 });
+
+app.get('/resume', function(req, res){
+	res.render('resume');
+});
+
 app.get('/users', user.list);
 
 app.post('/blog', function(req, res){

@@ -39,7 +39,7 @@
 		</div>
   
 <script>
-var availableCommands = ["[[b;#000;#d3d3d3]help, list, ls] - List the available commands", "[[b;#000;#d3d3d3]about] - Learn a little about me", "[[b;#000;#d3d3d3]resume] - View my resume", "[[b;#000;#d3d3d3]projects] - View a list of my current and past projects", "[[b;#000;#d3d3d3]goto <project>] - Go to a specific project if a live demo exists (requires exiting this page)", "[[b;#000;#d3d3d3]contact] - Get my contact info", "[[b;#000;#d3d3d3]blog] - View my latest blog entry"];
+var availableCommands = ["[[b;#000;#d3d3d3]help, list, ls] - List the available commands", "[[b;#000;#d3d3d3]about] - Learn a little about me", "[[b;#000;#d3d3d3]resume] - View my resume", "[[b;#000;#d3d3d3]projects] - View a list of some recent projects I have been working on.", "[[b;#000;#d3d3d3]contact] - Get my contact info", "[[b;#000;#d3d3d3]blog] - View my latest blog entry"];
 
 
 var commands = {
@@ -55,22 +55,22 @@ var commands = {
 	resume: function(term){
 		term.echo('Loading resume...');
         setTimeout(function(){
-            location.href='http://gabemarshall.me/resume.html'
+            location.href='http://gabemarshall.me/resume'
         }, 2000)
 	},
 	projects: function(term){
-		term.echo('Coming soon...');
+		term.echo('Heart of Honor (javascript game) http://www.heartofhonor.com\nnTrace (XST detection tool) https://github.com/gabemarshall/ntrace');
 	},
 	contact: function(term){
-		term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall');
+		term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall\nQuora: http://www.quora.com/Gabe-Marshall');
 	},
     blog: function(term){
-        term.echo('Latest Entry\n [[b;#000;#d3d3d3]<%= title %>]:\n\nTo view my entire blog, say view_blog')
+        term.echo('Latest Entry\n\n [[b;#000;#d3d3d3]<%= title %>]:\n\nTo view my entire blog, say view_blog')
     },
     blogview: function(term){
         term.echo('Loading blog...');
         setTimeout(function(){
-            location.href='http://hoverboard.io/tehskylark/blog'
+            location.href='http://tehskylark.tumblr.com'
         }, 2000)
     },
 	goto: function(term, projectUrl){
