@@ -32,7 +32,9 @@ box-shadow: 0px 0px 3px #000000;
 /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
 
 }
-#image_details{
+.pixelMe{
+    position:fixed;
+    left:50px;
     
 }
 
@@ -815,6 +817,7 @@ h5 {
     background: #00B4FF;
 }
 
+
 #section-profileImage #box-name {
     color: #333;
     font-size: 16px;
@@ -826,14 +829,14 @@ h5 {
 
 #section-profileImage #box-name h2 {
     color: #fff;
-    font: normal bold 36px/46px 'Open Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:'Press Start 2P'; font-size:20px;
     letter-spacing: 1px;
-    text-shadow: 0px 0px 7px #999;
+
 }
 
 #section-profileImage #box-name p {
     color: #fff;
-    font: normal 500 16px/19px 'Open Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:'Press Start 2P'; font-size:14px;
     margin-top: 0px;
     text-shadow: 0px 0px 7px #555;
 }
