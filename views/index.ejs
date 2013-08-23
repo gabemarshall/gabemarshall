@@ -53,11 +53,19 @@ var commands = {
 		term.echo('I\'m an outgoing IT professional passionate about all things related to the web and information security. \nIf you\'d like to see my resume just type [[b;#000;#d3d3d3]resume]');
 	},
 	resume: function(term){
-		term.echo('Loading resume...');
+		term.echo('To download a pdf of my resume, enter the command [[b;#000;#d3d3d3]download], otherwise enter [[b;#000;#d3d3d3]view_resume] to open it in your browser');
+	},
+    resumeView: function(term){
+        term.echo('Loading resume...');
         setTimeout(function(){
             location.href='http://gabemarshall.me/resume'
         }, 2000)
-	},
+    },
+    resumeDownload: function(term){
+        $.get('/resumed', function(data) {
+          
+        });
+    },
 	projects: function(term){
 		term.echo('Heart of Honor (javascript game) http://www.heartofhonor.com\nnTrace (XST detection tool) https://github.com/gabemarshall/ntrace');
 	},
@@ -65,7 +73,7 @@ var commands = {
 		term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall\nQuora: http://www.quora.com/Gabe-Marshall');
 	},
     blog: function(term){
-        term.echo('Latest Entry\n\n [[b;#000;#d3d3d3]<%= title %>]:\n\nTo view my entire blog, say view_blog')
+        term.echo('Latest Entry\n\n [[b;#000;#d3d3d3]<%= title %>]:\n\nTo view my entire blog, enter the command [[b;#000;#d3d3d3]view_blog]')
     },
     blogview: function(term){
         term.echo('Loading blog...');
@@ -94,7 +102,7 @@ jQuery(function($, undefined) {
         			commands.about(term);
         			break;
         		case 'resume':
-        			commands.resume(term);
+        			commands.resumeView(term);
         			break;
         		case 'projects':
         			commands.projects(term);
@@ -104,6 +112,12 @@ jQuery(function($, undefined) {
         			break;
                 case 'blog':
                     commands.blog(term);
+                    break;
+                case 'view_resume':
+                    commands.resumeView(term);
+                    break;
+                case 'download':
+                    commands.resumeDownload(term);
                     break;
                 case 'view_blog':
                     commands.blogview(term);

@@ -64,10 +64,6 @@ app.get('/resume', function(req, res){
 
 app.get('/users', user.list);
 
-app.post('/blog', function(req, res){
-  // post_snippet published
-})
-
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
