@@ -68,10 +68,10 @@ var commands = {
         });
     },
 	projects: function(term){
-		term.echo('Heart of Honor (javascript game) http://www.heartofhonor.com\nnTrace (XST detection tool) https://github.com/gabemarshall/ntrace');
+		term.echo('Heart of Honor (javascript game) http://www.heartofhonor.com\nnTrace (XST detection tool) https://github.com/gabemarshall/ntrace\ncasperXSS (Reflective/Dom XSS scanner) https://github.com/gabemarshall/casperXSS\nmdcrack-js (md5 hash cracker with online search capability) https://github.com/gabemarshall/mdcrack-js');
 	},
 	contact: function(term){
-		term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall\nQuora: http://www.quora.com/Gabe-Marshall');
+		term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall\nQuora: http://www.quora.com/Gabe-Marshall\nGithub: https://github.com/gabemarshall');
 	},
     blog: function(term){
         term.echo('Latest Entry\n\n [[b;#000;#d3d3d3]<%= title %>]:\n\nTo view my entire blog, enter the command [[b;#000;#d3d3d3]view_blog]')
@@ -79,7 +79,7 @@ var commands = {
     blogview: function(term){
         term.echo('Loading blog...');
         setTimeout(function(){
-            location.href='http://tehskylark.tumblr.com'
+            location.href='http://hoverboard.io/tehskylark/blog'
         }, 2000)
     },
 	goto: function(term, projectUrl){
