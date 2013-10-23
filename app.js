@@ -11,6 +11,10 @@ var express = require('express')
 
 var request = require('request');
 var cheerio = require('cheerio');
+var pushover = require('./push');
+
+
+pushover.message('Hey', 'new title');
 
 var postTitle;
 var postBody;
