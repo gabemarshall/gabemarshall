@@ -1,160 +1,46 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
+<head>
     <title>Gabe Marshall</title>
-    <link href="http://designmodo.github.io/Flat-UI/bootstrap/css/bootstrap.css" media"all" rel="stylesheet" type="text/css" />
-	<link href="stylesheets/flat-ui.css" media="all" rel="stylesheet" type="text/css" />
-	<link href="stylesheets/main.css" media="all" rel="stylesheet" type="text/css" />
-    <link rel='stylesheet' href='/stylesheets/terminal.css' />
-    <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+    <link href=
+    "http://designmodo.github.io/Flat-UI/bootstrap/css/bootstrap.css" rel=
+    "stylesheet" type="text/css">
+    <link href="stylesheets/flat-ui.css" media="all" rel="stylesheet" type=
+    "text/css">
+    <link href="stylesheets/main.css" media="all" rel="stylesheet" type=
+    "text/css">
+    <link href='/stylesheets/terminal.css' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel=
+    'stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    
     <script src="javascripts/jquery.terminal-min.js"></script>
-   <!-- <script src="javascripts/dterm.js"></script>-->
+</head>
 
-  </head>
-  <body style="background-color:#D3D3D3">
-    <div id="wrapper">	
-		<div id="section-intro">
-	<div id="section-profileImage" style="background-color:#444444">
+<body style="background-color:#D3D3D3">
+    <div id="wrapper">
+        <div id="section-intro">
+            <div id="section-profileImage" style="background-color:#444444">
+                <div class="container">
+                    <div class="sixteen columns">
+                        <div class="section" id="box-name">
+                            <img class="pixelMe" src="/images/me250.png">
 
-		<div class="container">			
-			<div class="sixteen columns">
-				<div id="box-name" class="section">
-                    <img class="pixelMe" src="/images/me250.png"/>
-                    	<h2>Gabe Marshall</h2>
-					<p>Security Analyst & Web Developer</p>
-				</div>
+                            <h2>Gabe Marshall</h2>
 
-			</div>
-			<div class="clear"></div>
+                            <p>Security Analyst &amp; Web Developer</p>
+                        </div>
+                    </div>
 
-		</div>
-		  
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-skills"></div>
+
+        <div class="terminal" id="term_demo" style="height: 200px;">
+        </div><script src="javascripts/main.js"></script>
     </div>
-	</div>
-		<div id="section-skills">
-	
-		</div>
-<div id="term_demo" class="terminal" style="height: 200px;">
-		</div>
-  
-<script>
-var availableCommands = ["[[b;#000;#d3d3d3]help, list, ls] - List the available commands", "[[b;#000;#d3d3d3]about] - Learn a little about me", "[[b;#000;#d3d3d3]resume] - View my resume", "[[b;#000;#d3d3d3]projects] - View a list of some recent projects I have been working on.", "[[b;#000;#d3d3d3]contact] - Get my contact info", "[[b;#000;#d3d3d3]blog] - View my latest blog entry"];
-
-
-var commands = {
-	list: function(term) {
-		for (i = 0; i < availableCommands.length; i++) {
-			term.echo(availableCommands[i]);
-		}
-	},
-	about: function(term){
-		term.clear();
-		term.echo('I\'m an outgoing IT professional passionate about all things related to the web and information security. \nIf you\'d like to see my resume just type [[b;#000;#d3d3d3]resume]');
-	},
-	resume: function(term){
-		term.echo('To download a pdf of my resume, enter the command [[b;#000;#d3d3d3]download], otherwise enter [[b;#000;#d3d3d3]view_resume] to open it in your browser');
-	},
-    resumeView: function(term){
-        term.echo('Loading resume...');
-        setTimeout(function(){
-            location.href='http://gabemarshall.me/resume'
-        }, 2000)
-    },
-    resumeDownload: function(term){
-        $.get('/resumed', function(data) {
-          
-        });
-    },
-	projects: function(term){
-		term.echo('Heart of Honor (javascript game) http://www.heartofhonor.com\nnTrace (XST detection tool) https://github.com/gabemarshall/ntrace\ncasperXSS (Reflective/Dom XSS scanner) https://github.com/gabemarshall/casperXSS\nmdcrack-js (md5 hash cracker with online search capability) https://github.com/gabemarshall/mdcrack-js');
-	},
-	contact: function(term){
-		term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall\nQuora: http://www.quora.com/Gabe-Marshall\nGithub: https://github.com/gabemarshall');
-	},
-    blog: function(term){
-        term.echo('Latest Entry\n\n [[b;#000;#d3d3d3]<%= title %>]:\n\nTo view my entire blog, enter the command [[b;#000;#d3d3d3]view_blog]')
-    },
-    blogview: function(term){
-        term.echo('Loading blog...');
-        setTimeout(function(){
-            location.href='http://hoverboard.io/tehskylark/blog'
-        }, 2000)
-    },
-	goto: function(term, projectUrl){
-		term.echo('Coming soon...');
-	}
-}
-jQuery(function($, undefined) {
-    $('#term_demo').terminal(function(command, term) {
-        if (command !== '') {
-        	switch (command){
-        		case 'help':
-        			commands.list(term);
-        			break;
-                case 'list':
-                    commands.list(term);
-                    break;
-        		case 'ls':
-        			commands.list(term);
-        			break;
-        		case 'about':
-        			commands.about(term);
-        			break;
-        		case 'resume':
-        			commands.resumeView(term);
-        			break;
-        		case 'projects':
-        			commands.projects(term);
-        			break;
-        		case 'contact':
-        			commands.contact(term);
-        			break;
-                case 'blog':
-                    commands.blog(term);
-                    break;
-                case 'view_resume':
-                    commands.resumeView(term);
-                    break;
-                case 'download':
-                    commands.resumeDownload(term);
-                    break;
-                case 'view_blog':
-                    commands.blogview(term);
-                    break;
-        		default:
-        			term.echo('Unknown command...type \'help\' to see a list of commands');
-        	}
-            // if(command === 'help'){
-            // 	term.echo('success');
-            // }
-            // else {
-            // 	term.echo('Unknown command...trype \'help\' to see a list of commands');
-            // }
-        } else {
-           term.echo('Unknown command...type \'help\' to see a list of commands');
-        }
-    }, {
-        greetings: 'Welcome...type [[b;#000;#d3d3d3]help] to see a list of commands.',
-        name: 'js_demo',
-        height: 200,
-        prompt: '$> '});
-});
-
-$('#term_demo').click(function(){
-	this.focus();
-})
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-35231375-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-  </body>
+</body>
 </html>
