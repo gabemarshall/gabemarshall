@@ -1,3 +1,5 @@
+
+
 var availableCommands = ["[[b;#000;#d3d3d3]help, list, ls] - List the available commands", "[[b;#000;#d3d3d3]about] - Learn a little about me", "[[b;#000;#d3d3d3]resume] - View my resume", "[[b;#000;#d3d3d3]projects] - View a list of some recent projects I have been working on.", "[[b;#000;#d3d3d3]contact] - Get my contact info", "[[b;#000;#d3d3d3]blog] - View my latest blog entry"];
 var commands = {
     list: function(term) {
@@ -93,6 +95,34 @@ jQuery(function($, undefined) {
 $('#term_demo').click(function() {
     this.focus();
 })
+
+var blink = '/images/me250_blink.png'
+var no_blink = '/images/me250.png'
+
+$(document).ready(function(){
+
+    var blinkMe = function(){
+          $(".pixelMe").attr('src', blink);
+          setTimeout(function(){
+              $(".pixelMe").attr('src', no_blink);
+          }, 150)
+    }
+
+    var blinkCalculation = function(){
+        var rollToBlink = Math.floor((Math.random()*5)+1);
+        if (rollToBlink === 5){
+            blinkMe()
+        }
+    }
+    
+    setInterval(function(){
+        blinkCalculation()
+    }, 1000)
+    
+
+})
+
+
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-35231375-2']);
 _gaq.push(['_trackPageview']);
