@@ -30,12 +30,12 @@ var commands = {
         term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall\nQuora: http://www.quora.com/Gabe-Marshall\nGithub: https://github.com/gabemarshall');
     },
     blog: function(term) {
-        term.echo('Latest Entry\n\n [[b;#000;#d3d3d3]<%= title %>]:\n\nTo view my entire blog, enter the command [[b;#000;#d3d3d3]view_blog]')
+        term.echo('I have a blog I rarely use on Tumblr. To view it, enter the command [[b;#000;#d3d3d3]view_blog]')
     },
     blogview: function(term) {
         term.echo('Loading blog...');
         setTimeout(function() {
-            location.href = 'http://hoverboard.io/tehskylark/blog'
+            location.href = 'http://tehskylark.tumblr.com'
         }, 2000)
     },
     goto: function(term, projectUrl) {
