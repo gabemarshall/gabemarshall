@@ -18,9 +18,11 @@
     padding: 10px;
     position: relative;
     overflow: hidden;
-    margin-left:25px;
+    margin-left:55px;
     margin-top:0px;
     margin-right:25px;
+    margin: 0 auto;
+    z-index: 0;
 }
 .cmd {
     padding: 0;

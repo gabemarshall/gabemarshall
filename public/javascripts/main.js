@@ -9,7 +9,7 @@ var commands = {
     },
     about: function(term) {
         term.clear();
-        term.echo('I\'m an outgoing IT professional passionate about all things related to the web and information security. \nIf you\'d like to see my resume just type [[b;#000;#d3d3d3]resume]');
+        term.echo('I\'m an outgoing IT professional passionate about all things related to the web and information security. \nIf you\'d like my contact info, say [[b;#000;#d3d3d3]contact]. To see my resume just say [[b;#000;#d3d3d3]resume]');
     },
     resume: function(term) {
         term.echo('To download a pdf of my resume, enter the command [[b;#000;#d3d3d3]download], otherwise enter [[b;#000;#d3d3d3]view_resume] to open it in your browser');
@@ -24,13 +24,13 @@ var commands = {
         $.get('/resumed', function(data) {});
     },
     projects: function(term) {
-        term.echo('Heart of Honor (javascript game) http://www.heartofhonor.com\nnTrace (XST detection tool) https://github.com/gabemarshall/ntrace\ncasperXSS (Reflective/Dom XSS scanner) https://github.com/gabemarshall/casperXSS\nmdcrack-js (md5 hash cracker with online search capability) https://github.com/gabemarshall/mdcrack-js\nDon\'t Elect (Lighthearted political app to determine your incumbents) http://www.dontelect.com');
+        term.echo('Heart of Honor (javascript game) http://www.heartofhonor.com\nnTrace (XST detection tool) https://github.com/gabemarshall/ntrace\ncasperXSS (Reflective/Dom XSS scanner) https://github.com/gabemarshall/casperXSS\nmdcrack-js (md5 hash cracker with online search capability) https://github.com/gabemarshall/mdcrack-js');
     },
     contact: function(term) {
         term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall\nQuora: http://www.quora.com/Gabe-Marshall\nGithub: https://github.com/gabemarshall');
     },
     blog: function(term) {
-        term.echo('I have a blog I rarely use on Tumblr. To view it, enter the command [[b;#000;#d3d3d3]view_blog]')
+        term.echo('I have Tumbler I occasionally write in. To view it, enter the command [[b;#000;#d3d3d3]view_blog]')
     },
     blogview: function(term) {
         term.echo('Loading blog...');
@@ -88,6 +88,7 @@ jQuery(function($, undefined) {
     }, {
         greetings: 'Welcome...type [[b;#000;#d3d3d3]help] to see a list of commands.',
         name: 'js_demo',
+        width: '75%',
         height: 200,
         prompt: '$> '
     });

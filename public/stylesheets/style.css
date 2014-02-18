@@ -1,8 +1,56 @@
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: #333;
+    background: #fff;
+    font: 14px/22px "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+    color:white;
 }
+
+
 
 a {
   color: #00B7FF;
+}
+
+#section-profileImage #box-name h2 {
+    color: #fff;
+    font-family:'Press Start 2P'; font-size:20px;
+    letter-spacing: 1px;
+}
+
+#section-profileImage #box-name p {
+    color: #fff;
+    font-family:'Press Start 2P'; font-size:12px;
+    margin-top: 0px;
+    text-shadow: 0px 0px 7px #555;
+}
+
+
+.wrapper
+{
+     position: absolute;
+     margin: auto;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     width: 100px;
+     height: 100px;
+     background-color: #ccc;
+}
+
+.center-div
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
 }

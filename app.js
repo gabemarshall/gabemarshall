@@ -9,12 +9,14 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
 
+var child = require('child_process');
+
 var request = require('request');
 var cheerio = require('cheerio');
 var pushover = require('./push');
 
 
-pushover.message('Hey', 'new title');
+//pushover.message('Hey', 'new title');
 
 var postTitle;
 var postBody;
@@ -32,25 +34,6 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-var refreshBlog = function(){
-
-		request('http://hoverboard.io/tehskylark/blog', function(error, response, body){
-			console.log('hey')
-		   $ = cheerio.load(body);
-		  postTitle = $('.post_snippet > h2').eq(0).text()
-		  postBody = $('.post_snippet > p').eq(1).text()
-
-		  console.log(postTitle)
-		   			
-		})
-	
-}
-refreshBlog();
-
-
-setInterval(function(){
-	refreshBlog();
-}, 3600000)
 
 // development only
 if ('development' == app.get('env')) {
@@ -58,8 +41,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function(req, res){
-	res.render('index', {title: postTitle});
-	console.log(postTitle);
+	res.render('index');
 });
 
 app.get('/resume', function(req, res){
@@ -67,6 +49,25 @@ app.get('/resume', function(req, res){
 });
 
 app.get('/users', user.list);
+
+app.get('/pushit', function(req, res) {
+	console.log("Pushing and Pulling!")
+	var gitIt = child.spawn('git', ['pull']);
+    process.stdin.pipe(gitIt.stdin);
+
+    gitIt.stdin.on("end", function() {
+        console.log("Done!")
+        res.send("Push/Pull Complete! (Do not refresh this page)")
+    });
+
+    gitIt.stdout.on('data', function(data) {
+        console.log(data + '');
+    });
+
+    gitIt.stderr.on('data', function(data) {
+        console.log('stderr: ' + data);
+    });
+})
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
