@@ -1,5 +1,3 @@
-
-
 var availableCommands = ["[[b;#000;#d3d3d3]help, list, ls] - List the available commands", "[[b;#000;#d3d3d3]about] - Learn a little about me", "[[b;#000;#d3d3d3]resume] - View my resume", "[[b;#000;#d3d3d3]projects] - View a list of some recent projects I have been working on.", "[[b;#000;#d3d3d3]contact] - Get my contact info", "[[b;#000;#d3d3d3]blog] - View my latest blog entry"];
 var commands = {
     list: function(term) {
@@ -46,50 +44,50 @@ jQuery(function($, undefined) {
     $('#term_demo').terminal(function(command, term) {
         if (command !== '') {
             switch (command) {
-            case 'help':
-                commands.list(term);
-                break;
-            case 'list':
-                commands.list(term);
-                break;
-            case 'ls':
-                commands.list(term);
-                break;
-            case 'about':
-                commands.about(term);
-                break;
-            case 'resume':
-                commands.resumeView(term);
-                break;
-            case 'projects':
-                commands.projects(term);
-                break;
-            case 'contact':
-                commands.contact(term);
-                break;
-            case 'blog':
-                commands.blog(term);
-                break;
-            case 'view_resume':
-                commands.resumeView(term);
-                break;
-            case 'download':
-                commands.resumeDownload(term);
-                break;
-            case 'view_blog':
-                commands.blogview(term);
-                break;
-            default:
-                term.echo('Unknown command...type \'help\' to see a list of commands');
+                case 'help':
+                    commands.list(term);
+                    break;
+                case 'list':
+                    commands.list(term);
+                    break;
+                case 'ls':
+                    commands.list(term);
+                    break;
+                case 'about':
+                    commands.about(term);
+                    break;
+                case 'resume':
+                    commands.resumeView(term);
+                    break;
+                case 'projects':
+                    commands.projects(term);
+                    break;
+                case 'contact':
+                    commands.contact(term);
+                    break;
+                case 'blog':
+                    commands.blog(term);
+                    break;
+                case 'view_resume':
+                    commands.resumeView(term);
+                    break;
+                case 'download':
+                    commands.resumeDownload(term);
+                    break;
+                case 'view_blog':
+                    commands.blogview(term);
+                    break;
+                default:
+                    term.echo('Unknown command...type \'help\' to see a list of commands');
             }
         } else {
             term.echo('Unknown command...type \'help\' to see a list of commands');
         }
     }, {
-        greetings: 'Welcome...type [[b;#000;#d3d3d3]help] to see a list of commands.',
+        greetings: 'Welcome...type [[b;#000;#d3d3d3]help] to see a list of commands. (Feel free to drag the terminal)',
         name: 'js_demo',
-        width: '75%',
-        height: 200,
+        width: '85%',
+        height: 123,
         prompt: '$> '
     });
 });
@@ -100,26 +98,32 @@ $('#term_demo').click(function() {
 var blink = '/images/me250_blink.png'
 var no_blink = '/images/me250.png'
 
-$(document).ready(function(){
+$(document).ready(function() {
 
-    var blinkMe = function(){
-          $(".pixelMe").attr('src', blink);
-          setTimeout(function(){
-              $(".pixelMe").attr('src', no_blink);
-          }, 150)
+    var blinkMe = function() {
+        $(".pixelMe").attr('src', blink);
+        setTimeout(function() {
+            $(".pixelMe").attr('src', no_blink);
+        }, 150)
     }
 
-    var blinkCalculation = function(){
-        var rollToBlink = Math.floor((Math.random()*5)+1);
-        if (rollToBlink === 5){
+    var blinkCalculation = function() {
+        var rollToBlink = Math.floor((Math.random() * 5) + 1);
+        if (rollToBlink === 5) {
             blinkMe()
         }
     }
-    
-    setInterval(function(){
+
+    setInterval(function() {
         blinkCalculation()
     }, 1000)
-    
+
+
+
+    $(function() {
+        $("#term_demo").draggable();
+    });
+
 
 })
 

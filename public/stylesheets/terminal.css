@@ -23,6 +23,12 @@
     margin-right:25px;
     margin: 0 auto;
     z-index: 0;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -moz-box-shadow: 0px 0px 1px #000000;
+    -webkit-box-shadow: 0px 0px 1px #000000;
+    box-shadow: 0px 0px 1px #000000;
 }
 .cmd {
     padding: 0;

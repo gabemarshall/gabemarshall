@@ -2,15 +2,6 @@ html {
     color: #000;
     background: #FFF;
 }
-.blogg {
-    max-height:350px;
-    overflow:auto;
-}
-.tumblr_view{
-    position:relative;
-    margin-top:30px;
-    margin-left:15px;
-}
 
 .project_details{
   position: fixed;
@@ -2280,7 +2271,7 @@ img.user_avatar {
 .outer-div
 {
      position: absolute;
-     bottom: 70px;
+     bottom: 0px;
      width: 100%;
 }
 .inner-div
