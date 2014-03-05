@@ -31,6 +31,12 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
+app.use(function(req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("X-Frame-Options", "deny");
+  res.setHeader("such-L33t-Header", "omg")
+  return next();
+});
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -41,14 +47,13 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function(req, res){
+  res.setHeader("X-WebKit-CSP", "default-src 'self'");
 	res.render('index');
 });
 
 app.get('/resume', function(req, res){
 	res.render('resume');
 });
-
-app.get('/users', user.list);
 
 app.get('/pushit', function(req, res) {
 	console.log("Pushing and Pulling!")
