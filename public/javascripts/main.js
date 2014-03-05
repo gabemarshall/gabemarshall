@@ -28,12 +28,12 @@ var commands = {
         term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall\nQuora: http://www.quora.com/Gabe-Marshall\nGithub: https://github.com/gabemarshall');
     },
     blog: function(term) {
-        term.echo('I have Tumbler I occasionally write in. To view it, enter the command [[b;#000;#d3d3d3]view_blog]')
+        term.echo('I have blog I occasionally write in. To view it, enter the command [[b;#000;#d3d3d3]view_blog]')
     },
     blogview: function(term) {
         term.echo('Loading blog...');
         setTimeout(function() {
-            location.href = 'http://tehskylark.tumblr.com'
+            location.href = 'http://blog.gabemarshall.me'
         }, 2000)
     },
     goto: function(term, projectUrl) {
