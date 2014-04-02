@@ -86,7 +86,7 @@ jQuery(function($, undefined) {
     }, {
         greetings: 'Welcome...type [[b;#000;#d3d3d3]help] to see a list of commands. (Feel free to drag the terminal)',
         name: 'js_demo',
-        width: '85%',
+        width: '95%',
         height: 123,
         prompt: '$> '
     });
