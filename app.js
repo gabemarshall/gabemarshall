@@ -47,7 +47,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function(req, res){
-  res.setHeader("X-WebKit-CSP", "default-src 'self'");
+ // res.setHeader("X-WebKit-CSP", "default-src 'self'");
 	res.render('index');
 });
 
