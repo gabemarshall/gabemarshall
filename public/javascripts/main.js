@@ -7,7 +7,7 @@ var commands = {
     },
     about: function(term) {
         term.clear();
-        term.echo('I\'m an outgoing IT professional passionate about all things related to the web and information security. \nIf you\'d like my contact info, say [[b;#000;#d3d3d3]contact]. To see my resume just say [[b;#000;#d3d3d3]resume]');
+        term.echo('I\'m an outgoing IT professional passionate about all things related to the web and information security. \nYou can view my [[b;#000;#d3d3d3]contact] info if you\'d like. You can also take a look at my [[b;#000;#d3d3d3]resume] if you\'d like.');
     },
     resume: function(term) {
         term.echo('To download a pdf of my resume, enter the command [[b;#000;#d3d3d3]download], otherwise enter [[b;#000;#d3d3d3]view_resume] to open it in your browser');
