@@ -47,13 +47,16 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function(req, res){
- // res.setHeader("X-WebKit-CSP", "default-src 'self'");
 	res.render('index');
 });
 
 app.get('/resume', function(req, res){
 	res.render('resume');
 });
+
+app.get('/phonegap', function(req, res){
+  res.render('phonegap');
+})
 
 app.get('/pushit', function(req, res) {
 	console.log("Pushing and Pulling!")
