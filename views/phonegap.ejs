@@ -16,6 +16,7 @@
     <h3>Testing Phonegap XSS</h3>
     <script>
         alert(1)
+        navigator.notification.beep(1);
         var myContact = navigator.contacts.create({"displayName": "Test User"});
         alert(2)
     </script>
