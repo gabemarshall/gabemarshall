@@ -7,7 +7,7 @@ var commands = {
     },
     about: function(term) {
         term.clear();
-        term.echo('I\'m an outgoing IT professional passionate about all things related to the web and information security. \nYou can view my [[b;#000;#d3d3d3]contact] info if you\'d like. You can also take a look at my [[b;#000;#d3d3d3]resume] if you\'d like.');
+        term.echo('I am an outgoing and ambitious Infosec professional who loves to build and break things. \nYou can view my [[b;#000;#d3d3d3]contact] info if you\'d like. You can also take a look at my [[b;#000;#d3d3d3]resume] if you\'d like.');
     },
     resume: function(term) {
         term.echo('To download a pdf of my resume, enter the command [[b;#000;#d3d3d3]download], otherwise enter [[b;#000;#d3d3d3]view_resume] to open it in your browser');
@@ -22,7 +22,7 @@ var commands = {
         $.get('/resumed', function(data) {});
     },
     projects: function(term) {
-        term.echo('Heart of Honor (javascript game) http://www.heartofhonor.com\nnTrace (XST detection tool) https://github.com/gabemarshall/ntrace\ncasperXSS (Reflective/Dom XSS scanner) https://github.com/gabemarshall/casperXSS\nmdcrack-js (md5 hash cracker with online search capability) https://github.com/gabemarshall/mdcrack-js');
+        term.echo('Heart of Honor (javascript fighting game) http://www.heartofhonor.com\nEnigma (string encoder/decoder command line tool) https://github.com/gabemarshall/enigma\ncasperXSS (reflective/dom xss scanner) https://github.com/gabemarshall/casperXSS');
     },
     contact: function(term) {
         term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall\nQuora: http://www.quora.com/Gabe-Marshall\nGithub: https://github.com/gabemarshall');

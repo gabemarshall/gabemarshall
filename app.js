@@ -34,7 +34,7 @@ app.use(express.methodOverride());
 app.use(function(req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("X-Frame-Options", "deny");
-  res.setHeader("such-L33t-Header", "omg")
+  res.setHeader("L33t-Headers", "omg")
   return next();
 });
 app.use(app.router);
