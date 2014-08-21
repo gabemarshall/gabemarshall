@@ -1,3 +1,28 @@
+// translate mouse events into touch events
+function touchHandler(event) {
+    var touch = event.changedTouches[0];
+
+    var simulatedEvent = document.createEvent("MouseEvent");
+        simulatedEvent.initMouseEvent({
+        touchstart: "mousedown",
+        touchmove: "mousemove",
+        touchend: "mouseup"
+    }[event.type], true, true, window, 1,
+        touch.screenX, touch.screenY,
+        touch.clientX, touch.clientY, false,
+        false, false, false, 0, null);
+
+    touch.target.dispatchEvent(simulatedEvent);
+    event.preventDefault();
+}
+
+function init() {
+    document.addEventListener("touchstart", touchHandler, true);
+    document.addEventListener("touchmove", touchHandler, true);
+    document.addEventListener("touchend", touchHandler, true);
+    document.addEventListener("touchcancel", touchHandler, true);
+}
+
 var availableCommands = ["[[b;#000;#d3d3d3]help, list, ls] - List the available commands", "[[b;#000;#d3d3d3]about] - Learn a little about me", "[[b;#000;#d3d3d3]resume] - View my resume", "[[b;#000;#d3d3d3]projects] - View a list of some recent projects I have been working on.", "[[b;#000;#d3d3d3]contact] - Get my contact info", "[[b;#000;#d3d3d3]blog] - View my latest blog entry"];
 var commands = {
     list: function(term) {
@@ -84,7 +109,7 @@ jQuery(function($, undefined) {
             term.echo('Unknown command...type \'help\' to see a list of commands');
         }
     }, {
-        greetings: 'Welcome...type [[b;#000;#d3d3d3]help] to see a list of commands. (Feel free to drag the terminal)',
+        greetings: 'Welcome...type [[b;#000;#d3d3d3]help] to see a list of commands. (Feel free to drag me or the terminal around if needed)',
         name: 'js_demo',
         width: '85%',
         height: 123,
@@ -99,6 +124,8 @@ var blink = '/images/me250_blink.png'
 var no_blink = '/images/me250.png'
 
 $(document).ready(function() {
+   
+    init()
 
     var blinkMe = function() {
         $(".pixelMe").attr('src', blink);
@@ -122,6 +149,7 @@ $(document).ready(function() {
 
     $(function() {
         $("#term_demo").draggable();
+        $(".pixelMe").draggable();
     });
 
 
