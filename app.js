@@ -35,6 +35,7 @@ app.use(function(req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("X-Frame-Options", "deny");
   res.setHeader("L33t-Headers", "omg")
+  res.setHeader("Mention-This-Header-Equals", "Instant-Friendship")
   return next();
 });
 app.use(app.router);
