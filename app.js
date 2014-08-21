@@ -54,6 +54,9 @@ app.get('/resume', function(req, res){
 	res.render('resume');
 });
 
+app.get('/new', function(req, res){
+  res.render('new')
+})
 app.get('/phonegap', function(req, res){
   res.render('phonegap');
 })
