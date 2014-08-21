@@ -47,7 +47,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function(req, res){
-	res.render('index');
+	res.render('new');
 });
 
 app.get('/resume', function(req, res){
