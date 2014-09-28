@@ -148,8 +148,8 @@ $(document).ready(function() {
 
 
     $(function() {
-        $("#term_demo").draggable();
-        $(".pixelMe").draggable();
+        //$("#term_demo").draggable();
+        //$(".pixelMe").draggable();
     });
 
 
