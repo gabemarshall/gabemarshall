@@ -1,27 +1,3 @@
-// translate mouse events into touch events
-function touchHandler(event) {
-    var touch = event.changedTouches[0];
-
-    var simulatedEvent = document.createEvent("MouseEvent");
-        simulatedEvent.initMouseEvent({
-        touchstart: "mousedown",
-        touchmove: "mousemove",
-        touchend: "mouseup"
-    }[event.type], true, true, window, 1,
-        touch.screenX, touch.screenY,
-        touch.clientX, touch.clientY, false,
-        false, false, false, 0, null);
-
-    touch.target.dispatchEvent(simulatedEvent);
-    event.preventDefault();
-}
-
-function init() {
-    document.addEventListener("touchstart", touchHandler, true);
-    document.addEventListener("touchmove", touchHandler, true);
-    document.addEventListener("touchend", touchHandler, true);
-    document.addEventListener("touchcancel", touchHandler, true);
-}
 
 var availableCommands = ["[[b;#000;#d3d3d3]help, list, ls] - List the available commands", "[[b;#000;#d3d3d3]about] - Learn a little about me", "[[b;#000;#d3d3d3]resume] - View my resume", "[[b;#000;#d3d3d3]projects] - View a list of some recent projects I have been working on.", "[[b;#000;#d3d3d3]contact] - Get my contact info", "[[b;#000;#d3d3d3]blog] - View my latest blog entry"];
 var commands = {
@@ -50,7 +26,7 @@ var commands = {
         term.echo('Heart of Honor (javascript fighting game) http://www.heartofhonor.com\nEnigma (string encoder/decoder command line tool) https://github.com/gabemarshall/enigma\ncasperXSS (reflective/dom xss scanner) https://github.com/gabemarshall/casperXSS');
     },
     contact: function(term) {
-        term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall\nQuora: http://www.quora.com/Gabe-Marshall\nGithub: https://github.com/gabemarshall');
+        term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall\nLinkedIn: https://www.linkedin.com/pub/gabe-marshall/36/725/a33/\nGithub: https://github.com/gabemarshall');
     },
     blog: function(term) {
         term.echo('I have blog I occasionally write in. To view it, enter the command [[b;#000;#d3d3d3]view_blog]')
@@ -109,7 +85,7 @@ jQuery(function($, undefined) {
             term.echo('Unknown command...type \'help\' to see a list of commands');
         }
     }, {
-        greetings: 'Welcome...type [[b;#000;#d3d3d3]help] to see a list of commands. (Feel free to drag me or the terminal around if needed)',
+        greetings: 'Welcome...type [[b;#000;#d3d3d3]help] to see a list of commands.',
         name: 'js_demo',
         width: '85%',
         height: 123,
@@ -148,8 +124,8 @@ $(document).ready(function() {
 
 
     $(function() {
-        //$("#term_demo").draggable();
-        //$(".pixelMe").draggable();
+        $("#term_demo").draggable();
+        $(".pixelMe").draggable();
     });
 
 
