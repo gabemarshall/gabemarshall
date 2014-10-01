@@ -48,7 +48,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function(req, res){
-	res.render('new');
+	res.render('index');
 });
 
 app.get('/resume', function(req, res){
@@ -60,25 +60,6 @@ app.get('/new', function(req, res){
 })
 app.get('/phonegap', function(req, res){
   res.render('phonegap');
-})
-
-app.get('/pushit', function(req, res) {
-	console.log("Pushing and Pulling!")
-	var gitIt = child.spawn('git', ['pull']);
-    process.stdin.pipe(gitIt.stdin);
-
-    gitIt.stdin.on("end", function() {
-        console.log("Done!")
-        res.send("Push/Pull Complete! (Do not refresh this page)")
-    });
-
-    gitIt.stdout.on('data', function(data) {
-        console.log(data + '');
-    });
-
-    gitIt.stderr.on('data', function(data) {
-        console.log('stderr: ' + data);
-    });
 })
 
 http.createServer(app).listen(app.get('port'), function(){

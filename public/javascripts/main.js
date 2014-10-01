@@ -88,7 +88,7 @@ jQuery(function($, undefined) {
         greetings: 'Welcome...type [[b;#000;#d3d3d3]help] to see a list of commands.',
         name: 'js_demo',
         width: '85%',
-        height: 123,
+        height: 223,
         prompt: '$> '
     });
 });
@@ -100,8 +100,6 @@ var blink = '/images/me250_blink.png'
 var no_blink = '/images/me250.png'
 
 $(document).ready(function() {
-   
-    init()
 
     var blinkMe = function() {
         $(".pixelMe").attr('src', blink);
