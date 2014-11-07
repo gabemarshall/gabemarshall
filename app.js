@@ -13,10 +13,6 @@ var child = require('child_process');
 
 var request = require('request');
 var cheerio = require('cheerio');
-var pushover = require('./push');
-
-
-//pushover.message('Hey', 'new title');
 
 var postTitle;
 var postBody;
@@ -35,14 +31,11 @@ app.use(function(req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("X-Frame-Options", "deny");
   res.setHeader("L33t-Headers", "omg")
-  res.setHeader("Mention-This-Header-Equals", "Instant-Friendship")
   return next();
 });
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-// development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
