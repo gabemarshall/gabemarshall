@@ -1,5 +1,15 @@
 
-var availableCommands = ["[[b;#000;#d3d3d3]help, list, ls] - List the available commands", "[[b;#000;#d3d3d3]about] - Learn a little about me", "[[b;#000;#d3d3d3]resume] - View my resume", "[[b;#000;#d3d3d3]projects] - View a list of some recent projects I have been working on.", "[[b;#000;#d3d3d3]contact] - Get my contact info", "[[b;#000;#d3d3d3]blog] - View my latest blog entry"];
+var availableCommands = ["[[b;#000;#d3d3d3]help, list, ls] - List the available commands", "[[b;#000;#d3d3d3]about] - Learn a little about me", "[[b;#000;#d3d3d3]resume] - View my resume", "[[b;#000;#d3d3d3]projects] - View a list of some recent projects I have been working on.", "[[b;#000;#d3d3d3]contact] - Get my contact info", "[[b;#000;#d3d3d3]blog] - View my blog that I occasionally write in"];
+var d = new Date();
+var date = d.toDateString();
+
+var motd = 
+   ['#########################################',
+    '##  Hello, today is [[b;#000;#d3d3d3] '+date+' ]  ##',
+    '#########################################',
+    '\nType [[b;#000;#d3d3d3] help ] to see a list of commands.',
+    ''
+   ].join('\n');
 var commands = {
     list: function(term) {
         for (i = 0; i < availableCommands.length; i++) {
@@ -23,15 +33,12 @@ var commands = {
         $.get('/resumed', function(data) {});
     },
     projects: function(term) {
-        term.echo('Heart of Honor (javascript fighting game) http://www.heartofhonor.com\nEnigma (string encoder/decoder command line tool) https://github.com/gabemarshall/enigma\ncasperXSS (reflective/dom xss scanner) https://github.com/gabemarshall/casperXSS');
+        term.echo('Heart of Honor (javascript fighting game) http://www.heartofhonor.com\nEnigma (string encoder/decoder command line tool) https://github.com/gabemarshall/enigma\ncasperXSS (reflective/dom xss scanner) https://github.com/gabemarshall/casperXSS\nBrosec - A tool to store and retrieve frequently pentest fu from the command line. (In development)');
     },
     contact: function(term) {
         term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall\nLinkedIn: https://www.linkedin.com/pub/gabe-marshall/36/725/a33/\nGithub: https://github.com/gabemarshall');
     },
     blog: function(term) {
-        term.echo('I have blog I occasionally write in. To view it, enter the command [[b;#000;#d3d3d3]view_blog]')
-    },
-    blogview: function(term) {
         term.echo('Loading blog...');
         setTimeout(function() {
             location.href = 'http://blog.gabemarshall.me'
@@ -85,7 +92,7 @@ jQuery(function($, undefined) {
             term.echo('Unknown command...type \'help\' to see a list of commands');
         }
     }, {
-        greetings: 'Welcome...type [[b;#000;#d3d3d3]help] to see a list of commands.',
+        greetings: motd,
         name: 'js_demo',
         width: '85%',
         height: 223,
