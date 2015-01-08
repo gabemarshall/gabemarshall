@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4d4d4d;
+  background-color: #ffffff;
+  height:100%;
+}
+html {
+  background: #ffffff;
+  height:100%;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 24px;
+  color:#6bb547;
+}
+
+h2+* {
+	margin-top:5px; /* Allow h2 to breathe JSM */	
+}
+
+p small{color:#999}
+
+#main {
+  background: #ffffff url('../img/horizontal_divider_line.png') no-repeat center top;
+  border-top: 1px solid #e3e3e3;
+  padding: 28px;
+}
+
+#footer {
+  background: #ffffff;
+  height:60px;
+  border-top: 3px solid #6eac00;
+ /* padding:10px;*/
+}
+#push {
+	height:80px;
+
+}
+#wrap {
+	 min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -114px;
+}
+
+#footer p {
+  color:#808080;
+  font-size: 12px;
+  margin:0;
+}
+input{
+  width:90%;
+}
+input[type="submit"]{
+  width:93%;
+}
+p.loginBtn{
+  width: 99%;
+}
+hr{
+  width: 92%;
+}

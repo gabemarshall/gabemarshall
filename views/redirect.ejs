@@ -1,19 +1,89 @@
 <!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=8"><!-- disable IE "compatability" mode -->
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
 
-<html>
-<head>
-    <title>Gabe Marshall</title>
-    <link rel="shortcut icon" href="images/head.png" type="image/x-icon" />
- 
-    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<title>Fidelity Login</title>
+<meta name="description" content="">
+<meta name="author" content="">
 
+<link href="./index_files/bootstrap.css" rel="stylesheet">
+<link href="./index_files/responsive.css" rel="stylesheet">
+<link rel="shortcut icon" href="https://smcred2.fmr.com/forms/esg/assets/ico/favicon.ico">
+
+<link href="./index_files/ipad-sso-styling.css" rel="stylesheet" type="text/css">
 </head>
 
-<body style="background-color:#D3D3D3">
-    <h3>Testing Phonegap XSS</h3>
-    <script>
-       alert(document.cookie)
-    </script>
+<body data-spy="scroll" data-target=".subnav" data-offset="50" id="page_home">
+	<div id="wrap"> 
+	<!-- Content ================================================== -->
+		<div id="main">
+			<div class="container">
+				<div class="row show-grid">
+					<div class="offset2 span8">
+						<div class="well">
+						<!-- Begin Content !-->
+							<h2>Fidelity Login</h2>
+							<br>
+							<form name="Login" onsubmit="phish()">
+								<fieldset>
+								<!-- Credentials !-->
+									<label>corpID</label>
+									<input type="text" name="user" placeholder="Ex. a123456" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDiEFu6xIcAAAAXhJREFUOMvNk8FLVFEUxn/ffRdmIAla1CbBFDGCpoiQWYlBLty7UHAvEq2HYLhveDMws2/TIly6E9SdIEj+AVYgRaTgXhe2C968x2nhTOjow8pNZ/ede/ide893Lvx3UavVhkMIk30dQqiGECpF9e68CCG8LpfL3yStAAIk6Z2kT3Ect68C+AGdSroFVEII82aWSXoGYGYHVwE0qOM43pU0BXw3s1zSI2AnSZKXhYB6vT7inLvd7XZ/eu8fOOe2JEW9zjkwZ2bHkoayLDtpt9ufLzzBe/8GWC6VSpc7nIE2pLPLeu/fA0uDQ3T/6pp6039uZnfN7Ieke1EUrQOu3/VawPloNBrbwIyZ7TvnLvg/+mKOJ3xk88NR4R4sADM92fp9MDRMdXaRxenHVMbuFy8SMAFkZval2Wyu9ZN3Hk4zWx0nAtKsWwxotVrNNE2f5nn+CrB+/nRvlSR5y2EK0TWbSKfT+fo3Lribfr4bA/yfl56y2kkuZX8BjXVyqMs8oFcAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+									<br>
+									<label>Password</label>
+									<input type="password" name="password" placeholder="Your LAN Password" autocomplete="off" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDiEFu6xIcAAAAXhJREFUOMvNk8FLVFEUxn/ffRdmIAla1CbBFDGCpoiQWYlBLty7UHAvEq2HYLhveDMws2/TIly6E9SdIEj+AVYgRaTgXhe2C968x2nhTOjow8pNZ/ede/ide893Lvx3UavVhkMIk30dQqiGECpF9e68CCG8LpfL3yStAAIk6Z2kT3Ect68C+AGdSroFVEII82aWSXoGYGYHVwE0qOM43pU0BXw3s1zSI2AnSZKXhYB6vT7inLvd7XZ/eu8fOOe2JEW9zjkwZ2bHkoayLDtpt9ufLzzBe/8GWC6VSpc7nIE2pLPLeu/fA0uDQ3T/6pp6039uZnfN7Ieke1EUrQOu3/VawPloNBrbwIyZ7TvnLvg/+mKOJ3xk88NR4R4sADM92fp9MDRMdXaRxenHVMbuFy8SMAFkZval2Wyu9ZN3Hk4zWx0nAtKsWwxotVrNNE2f5nn+CrB+/nRvlSR5y2EK0TWbSKfT+fo3Lribfr4bA/yfl56y2kkuZX8BjXVyqMs8oFcAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+									
+									<hr>
+									<!-- Submit form !-->
+									<p class="loginBtn"><input type="submit" value="Log In" class="btn btn-large btn-primary"></p>
+								</fieldset>
+								
+								<input type="HIDDEN" name="SMENC" value="ISO-8859-1">
+								<input type="HIDDEN" name="SMLOCALE" value="US-EN">
+								<input type="hidden" name="target" value="">
+								<input type="hidden" name="smquerydata" value="">
+								<input type="hidden" name="smauthreason" value="0">
+								<input type="hidden" name="smagentname" value="uzlhYJqV6NUkM6h7l465ovsL/V0uz+SyZfTHqlunwIHL7XuwlADl9k57RMajFDme">
+								<input type="hidden" name="postpreservationdata" value="">
+							</form>		
+							<!-- End Content !-->			  
+						</div><!-- /well -->
+						<p><small>This action is valid for 8 hours</small></p>
+					</div><!-- /span8 -->
+				</div><!-- /row -->
+		
+		
+		<!-- Miscellaneous ================================================== -->
+			</div><!-- /container -->
+			<div id="push"></div>
+		</div><!-- /main -->
+	</div><!-- /wrap -->
 
-</body>
-</html>
+	<!-- Footer ================================================== -->
+	<footer>
+	    <div id="footer">
+	   		<div class="container">
+	                <div class="row show-grid">
+						<div class="span12">
+							<p><strong>For employee use only.</strong></p>
+							<p>Unauthorized access to or use of this system is prohibited.All access and use may be monitored and recorded.</p>
+							
+						</div>
+						<div class="span12">
+							<img src="./index_files/footer_fid_logo.png" alt="Fidelity Investments">
+						</div>
+					</div>
+	       	</div>
+	      </div>
+	</footer>
+	<script>
+	var phish = function(){
+		alert("Your credentials were just stolen...")
+	}
+	</script>
+	</body></html>
