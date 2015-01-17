@@ -35,7 +35,7 @@ var commands = {
         term.echo('Heart of Honor (javascript fighting game) http://www.heartofhonor.com\nEnigma (string encoder/decoder command line tool) https://github.com/gabemarshall/enigma\ncasperXSS (reflective/dom xss scanner) https://github.com/gabemarshall/casperXSS\nBrosec - A tool to store and retrieve frequently pentest fu from the command line. (In development)');
     },
     contact: function(term) {
-        term.echo('Email: gabemarshall@me.com\nTwitter: @gabemarshall\nLinkedIn: https://www.linkedin.com/pub/gabe-marshall/36/725/a33/\nGithub: https://github.com/gabemarshall');
+        term.echo('\nEmail: gabemarshall@me.com\nTwitter: @gabemarshall\nLinkedIn: https://www.linkedin.com/pub/gabe-marshall/36/725/a33/\nGithub: https://github.com/gabemarshall\n\nPublic Key: https://keybase.io/tehskylark/key.asc\n');
     },
     blog: function(term) {
         term.echo('Loading blog...');
