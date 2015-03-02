@@ -53,10 +53,15 @@ app.get('/testredirect', function(req, res){
 })
 
 app.get('/new', function(req, res){
-  res.render('new')
+  res.render('new');
 })
+
 app.get('/phonegap', function(req, res){
   res.render('phonegap');
+})
+
+app.get('/domx', function(req, res){
+  res.render('domx');
 })
 
 http.createServer(app).listen(app.get('port'), function(){
