@@ -56,8 +56,8 @@ app.get('/new', function(req, res){
   res.render('new');
 })
 
-app.get('/phonegap', function(req, res){
-  res.render('phonegap');
+app.get('/cGFpbnQ', function(req, res){
+  res.render('paint');
 })
 
 app.get('/domx', function(req, res){
