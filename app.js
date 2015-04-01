@@ -64,6 +64,11 @@ app.get('/domx', function(req, res){
   res.render('domx');
 })
 
+// Dom Xss without link
+app.get('/domxv2', function(req, res){
+  res.render('domxv2');
+})
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
