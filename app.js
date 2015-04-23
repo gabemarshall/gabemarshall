@@ -56,10 +56,6 @@ app.get('/new', function(req, res){
   res.render('new');
 })
 
-app.get('/cGFpbnQ', function(req, res){
-  res.render('paint');
-})
-
 app.get('/domx', function(req, res){
   res.render('domx');
 })
