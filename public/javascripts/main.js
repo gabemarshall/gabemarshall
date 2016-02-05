@@ -25,14 +25,14 @@ var commands = {
     resumeView: function(term) {
         term.echo('Loading resume...');
         setTimeout(function() {
-            location.href = 'http://gabemarshall.me/resume'
+            location.href = 'https://www.gabemarshall.me/resume'
         }, 2000)
     },
     resumeDownload: function(term) {
         $.get('/resumed', function(data) {});
     },
     projects: function(term) {
-        term.echo('Heart of Honor (javascript fighting game) http://www.heartofhonor.com\nEnigma (string encoder/decoder command line tool) https://github.com/gabemarshall/enigma\ncasperXSS (reflective/dom xss scanner) https://github.com/gabemarshall/casperXSS\nBrosec - A tool to store and retrieve frequently pentest fu from the command line. (In development)');
+        term.echo('Heart of Honor (javascript fighting game) http://www.heartofhonor.com\nEnigma (string encoder/decoder command line tool) https://github.com/gabemarshall/enigma\ncasperXSS (reflective/dom xss scanner) https://github.com/gabemarshall/casperXSS\nBrosec - A tool to store and retrieve frequently pentest fu from the command line. https://github.com/gabemarshall/Brosec');
     },
     contact: function(term) {
         term.echo('\nEmail: gabemarshall@me.com\nTwitter: @gabemarshall\nLinkedIn: https://www.linkedin.com/pub/gabe-marshall/36/725/a33/\nGithub: https://github.com/gabemarshall\n\nPublic Key: https://keybase.io/tehskylark/key.asc\n');
@@ -40,7 +40,7 @@ var commands = {
     blog: function(term) {
         term.echo('Loading blog...');
         setTimeout(function() {
-            location.href = 'http://blog.gabemarshall.me'
+            location.href = 'https://blog.gabemarshall.me'
         }, 2000)
     },
     goto: function(term, projectUrl) {
