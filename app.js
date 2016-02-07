@@ -48,10 +48,6 @@ app.get('/resume', function(req, res){
 	res.render('resume');
 });
 
-app.get('/testredirect', function(req, res){
-  res.render('redirect')
-})
-
 app.get('/new', function(req, res){
   res.render('new');
 })
