@@ -32,7 +32,7 @@ var commands = {
         $.get('/resumed', function(data) {});
     },
     projects: function(term) {
-        term.echo('Heart of Honor (javascript fighting game) http://heartofhonor.gabemarshall.me\nEnigma (string encoder/decoder command line tool) https://github.com/gabemarshall/enigma\ncasperXSS (reflective/dom xss scanner) https://github.com/gabemarshall/casperXSS\nBrosec - A tool to store and retrieve frequently pentest fu from the command line. https://github.com/gabemarshall/Brosec');
+        term.echo('Heart of Honor (javascript fighting game) http://heartofhonor.gabemarshall.me\nEnigma (string encoder/decoder command line tool) https://github.com/gabemarshall/enigma\nBrosec - A tool to store and retrieve frequently pentest fu from the command line. https://github.com/gabemarshall/Brosec');
     },
     contact: function(term) {
         term.echo('\nEmail: gabemarshall@me.com\nTwitter: @gabemarshall\nLinkedIn: https://www.linkedin.com/pub/gabe-marshall/36/725/a33/\nGithub: https://github.com/gabemarshall\n\nPublic Key: https://keybase.io/tehskylark/key.asc\n');
