@@ -95,7 +95,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', end
 /** @group clearfix **/
 .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
 .clearfix { display: inline-block; }
- 
+
 html[xmlns] .clearfix { display: block; }
 * html .clearfix { height: 1%; }
 
@@ -114,11 +114,11 @@ body { font: 15px Helvetica, Sans-Serif; line-height: 24px; }
 border-style:solid;
 border-color:#EEEEEE;
 border-width: 12px;
--moz-transform: scale(1) rotate(-5deg) ;
--webkit-transform: scale(1) rotate(-5deg) ;
--o-transform: scale(1) rotate(-5deg) ;
--ms-transform: scale(1) rotate(-5deg) ;
-transform: scale(1) rotate(-5deg); 
+-moz-transform: scale(1) rotate(-2deg) ;
+-webkit-transform: scale(1) rotate(-2deg) ;
+-o-transform: scale(1) rotate(-2deg) ;
+-ms-transform: scale(1) rotate(-2deg) ;
+transform: scale(1) rotate(-2deg); 
 }
 
 h1 { margin: 0 0 16px 0; padding: 0 0 16px 0; font-size: 42px; font-weight: bold; letter-spacing: -2px; border-bottom: 1px solid #999; }

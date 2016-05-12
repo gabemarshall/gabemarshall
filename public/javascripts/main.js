@@ -93,7 +93,7 @@ jQuery(function($, undefined) {
     }, {
         greetings: motd,
         name: 'js_demo',
-        width: '85%',
+        width: '100%',
         height: 223,
         prompt: '$> '
     });
