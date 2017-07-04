@@ -1,0 +1,157 @@
+
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="assets/img/pic.png" type="image/x-icon" />
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="assets/css/resume.css" />
+     <title>Gabe Marshall</title>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <ul id="n" class="clearfix">
+            <li><a href="/">Return Home</a></li>
+
+        </ul>
+    </nav>
+    <div id="page-wrap">
+    <button class="btn btn-info btn-mini printBtn">Print Resume</button>
+        <img height="125" width="125" src="assets/img/pic.png" alt="Gabe Marshall" id="pic" class="view"/>
+
+        <div id="contact-info" class="vcard">
+            <h1 class="fn">Gabe Marshall</h1>
+            <p>
+                Email: <a class="email" style="border-bottom: 1px dotted #999;" href="mailto:gabemarshall@me.com">gabemarshall@me.com</a>
+            </p>
+
+        </div>
+
+        <div id="objective">
+            <p>
+                I am an outgoing and ambitious Infosec professional who loves to both build and break things.
+            </p>
+        </div>
+
+        <div class="clear"></div>
+
+        <dl>
+
+
+            <dd class="clear"></dd>
+
+            <dt>Skills Overview</dt>
+            <dd>
+                <h2>Penetration Testing</h2>
+                <p>Extensive experience in performing penetration tests of enterprise web applications, network infrastructure, and mobile applications.</p>
+                <h2>Application Security</h2>
+                <p>Strong understanding of Information Security with a focus in application security testing, infrastructure review, and secure coding best practices.</p>
+                <h2>Application Development</h2>
+                <p>Full stack web developer. Experienced in building multiple web applications as well as security tools using NodeJS, Ruby, or Python.</p>
+
+                <h2>Misc</h2>
+                <p>Experienced in writing enterprise security policies, creating security training material, and writing disaster recovery plan documentation.</p>
+
+            </dd>
+
+            <dd class="clear"></dd>
+            <br>
+            <dt>Experience</dt>
+            <dd>
+                <h2>Fidelity Investments<span>Principal Penetration Tester - Cary, NC - March 2013-present</h2>
+                <ul>
+                    <li>Responsible for conducting end-to-end penetration tests against numerous critical customer facing applications and network infrastructure</li>
+                    <li>Co-leads Red Team engagements against company assets</li>
+                    <li>Establishes and maintains relationships with developers and assists in the resolution of discovered vulnerabilities</li>
+                    <li>Creates and operates Capture the Flag competitions that are held on a yearly basis</li>
+                </ul><br><br>
+
+                <h2>University of North Texas <span>Manager of IT Security Compliance & Disaster Recovery Planning - Denton, TX - 2006-2013</span></h2>
+                <ul>
+                    <li>Responsible for maintaining overall PCI and HIPAA compliance across the entire UNT System. Solved several major security compliance issues that requireded project leadership and management, as well as buy-in from multiple external departments</li>
+                    <li>Acted as Team Lead for Disaster Recovery Planning for all IT in the UNT System</li>
+                    <li>Developed numerous data-driven websites built on Sharepoint web services</li>
+                </ul><br>
+
+                <h2>University of North Texas <span>Helpdesk Consultant - Denton, TX - 2005-2006</span></h2>
+                <ul>
+                    <li>Supported UNT computing systems including: Remedy Action Request System, Student Email, Eaglenet (Wireless Network), PeopleSoft, Blackboard Vista and various other systems</li>
+                </ul>
+            </dd>
+            <dd class="clear"></dd>
+            <dt>Education</dt>
+            <dd>
+                <h2>University of North Texas - Denton, TX</h2>
+                <p><strong>Major:</strong> Emergency Management<br />
+                   <strong>Minor:</strong> Business</p>
+            </dd>
+            <dd class="clear"></dd>
+
+            <dt>Certifications</dt>
+            <dd>
+                <h2>Offensive Security Certified Professional (OSCP)</h2>
+                <p>Offensive Security - Dec 2014</p>
+            </dd>
+            <dd>
+                <h2>Certified Web Application Penetration Tester</h2>
+                <p>Infosec Institute - 2013</p>
+            </dd>
+            <br><br><br>
+            <dd>
+                <h2>Unix and Linux+</h2>
+                <p>Infosec Institute - 2013</p>
+            </dd>
+            <br><br><br>
+            <dd class="clear"></dd>
+
+            <dt>Hobbies</dt>
+            <dd style="font-size:1.2em;">Participating in CTF competitions, security research, web development, hackathons.
+            </dd><br><br>
+            <dd style="font-size:1.2em;">Creator of the <a href="https://eversec.rocks/portal.php">Eversec CTF</a></dd>
+            <br>
+            <dd style="font-size:1.2em;">Creator of the <a href="https://github.com/gabemarshall/Brosec">Brosec utility</a></dd>
+
+            <dd class="clear"></dd>
+
+            <dt>Awards & Accomplishments</dt>
+            <dd style="font-size:1.2em;"><a href="https://www.sohopelesslybroken.com/contests.php">SOHOpelessly Broken CTF Track 1 (DEF CON 23)</a></dd>
+            <dd style="font-size:1.2em;"><a href="https://basecamp.com/security/response">Basecamp Security Acknowledgement</a></dd>
+            </dd>
+
+            <dd class="clear"></dd>
+
+            <dt>References</dt>
+            <dd style="font-size:1.2em;">Available upon request</dd>
+            <dd class="clear"></dd>
+        </dl>
+        <div class="clear"></div>
+
+    </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script>
+$('.printBtn').click(function(){
+   $('.nav , header, .printBtn').hide();
+   $('.email').replaceWith('<span>gabemarshall@me.com</span>')
+ window.print();
+  $('.nav , header, .printBtn').show();
+
+});
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35231375-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+
+</html>
